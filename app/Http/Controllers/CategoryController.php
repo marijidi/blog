@@ -64,4 +64,13 @@ class CategoryController extends Controller
 
         return back()->with('category_updated','Category record has been updated');//Message Alert
     }
+
+    //Funcion que elimina registro (categoria)
+    public function deleteCategory($id)
+    {
+        $category = Category::find($id);
+        unlink(public_path('images').'/'.$category->image);
+        $category->delete();
+        return back()->with('category_deleted','Category deleted successfully!');
+    }
 }

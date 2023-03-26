@@ -17,6 +17,11 @@
                         All Categories <a href="/add-category" class="btn btn-success">Add New</a>
                     </div>
                     <div class="card-body">
+                    @if(Session::has('category_deleted'))
+                        <div class="alert alert-success" role="alert">
+                             {{Session::get('category_deleted')}}
+                        </div>
+                        @endif
                        <table class="table table-striped">
                         <thead>
                             <tr>
@@ -34,6 +39,7 @@
                                 <td><img src="{{asset('images')}}/{{$category->image}}" alt="" style="max-width:60px;"/></td>
                                 <td>
                                     <a href="/edit-category/{{$category->id}}" class="btn btn-info">Edit</a>
+                                    <a href="/delete-category/{{$category->id}}" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
                             @endforeach
