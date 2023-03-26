@@ -21,3 +21,5 @@ Route::get('/', function () {
 Route::get('/add-category', [CategoryController::class, 'addCategory']);
 
 Route::post('/add-category',[CategoryController::class, 'storeCategory'])->name('category.store');
+
+Route::get('/all-categories', [CategoryController::class, 'categories']);

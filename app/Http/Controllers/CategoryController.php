@@ -31,4 +31,11 @@ class CategoryController extends Controller
 
         return back()->with('category_added','Category record has been inserted');//Message Alert
     }
+
+    //Display Datos de Tabla categories
+    public function categories()
+    {
+        $categories = Category::all();
+        return view('all-categories',compact('categories'));
+    }
 }
