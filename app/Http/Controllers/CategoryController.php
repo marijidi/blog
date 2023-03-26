@@ -38,4 +38,30 @@ class CategoryController extends Controller
         $categories = Category::all();
         return view('all-categories',compact('categories'));
     }
+
+    //Edit function para recoger categoria a editar
+    public function editCategory($id)
+    {
+        $category = Category::find($id);
+        return view('edit-category',compact('category'));
+    }
+
+    //Actualiza en la BD a la categoria
+    public function updateCategory(Request $request)
+    {
+        $name = $request->name;
+        $description = $request->description;
+        $image=$request->file('file');
+        //ojo aqui
+        $imageName = time().'.'.$image->extension();//error en esta linea- para que funcione tiene que subir otra imagen para funcionar o poner la misma
+        $image->move(public_path('images'),$imageName);
+
+        $category = Category::find($request->id);
+        $category->name=$name;
+        $category->description=$description;
+        $category->image= $imageName;
+        $category->save();
+
+        return back()->with('category_updated','Category record has been updated');//Message Alert
+    }
 }

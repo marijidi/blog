@@ -23,6 +23,7 @@
                                 <th>Name</th>
                                 <th>Description</th>
                                 <th>Image</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -31,6 +32,9 @@
                                 <td>{{$category->name}}</td>
                                 <td>{{$category->description}}</td>
                                 <td><img src="{{asset('images')}}/{{$category->image}}" alt="" style="max-width:60px;"/></td>
+                                <td>
+                                    <a href="/edit-category/{{$category->id}}" class="btn btn-info">Edit</a>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
