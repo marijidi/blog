@@ -11,10 +11,10 @@
     <section style="padding-top:60px;">
         <div class="container">
            <div class="row">
-              <div class="col-md-6 offset-md-3">
+              <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        All Categories
+                        All Categories <a href="/add-category" class="btn btn-success">Add New</a>
                     </div>
                     <div class="card-body">
                        <table class="table table-striped">
