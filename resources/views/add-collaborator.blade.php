@@ -18,9 +18,9 @@
                     </div>
                     <div class="card-body">
                         <!--Message Alert-->
-                        @if(Session::has('collaborator.store'))
+                        @if(Session::has('collaborator_added'))
                         <div class="alert alert-success" role="alert">
-                             {{Session::get('collaborator.store')}}
+                             {{Session::get('collaborator_added')}}
                         </div>
                         @endif
                         <form method="POST" action="{{route('collaborator.store')}}" enctype="multipart/form-data">
