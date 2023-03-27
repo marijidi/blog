@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <title>Add Category</title>
+    <title>Add Collaborator</title>
 </head>
 <body>
     <section style="padding-top:60px;">
@@ -14,24 +14,32 @@
               <div class="col-md-6 offset-md-3">
                 <div class="card">
                     <div class="card-header">
-                        Add New Category
+                        Add New Collaborator
                     </div>
                     <div class="card-body">
                         <!--Message Alert-->
-                        @if(Session::has('category_added'))
+                        @if(Session::has('collaborator.store'))
                         <div class="alert alert-success" role="alert">
-                             {{Session::get('category_added')}}
+                             {{Session::get('collaborator.store')}}
                         </div>
                         @endif
-                        <form method="POST" action="{{route('category.store')}}" enctype="multipart/form-data">
+                        <form method="POST" action="{{route('collaborator.store')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label for="name">Name</label>
                                 <input type="text" name="name" class="form-control"/>
                             </div>
                             <div class="form-group">
-                                <label for="description">Description</label>
-                                <input type="text" name="description" class="form-control"/>
+                                <label for="description">Lastname</label>
+                                <input type="text" name="lastname" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Phone</label>
+                                <input type="text" name="phone" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Email</label>
+                                <input type="text" name="email" class="form-control"/>
                             </div>
                             <!--Choose file con su respectiva funcion de preview-->
                             <div class="form-group">

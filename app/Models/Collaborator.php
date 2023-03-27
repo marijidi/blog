@@ -4,19 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Relations\BelongsTo;
-use Illuminate\Database\Relations\HasOne;
 
-class Category extends Model
+class Collaborator extends Model
 {
     use HasFactory;
-    
-    /**
+
+     /**
      * table
      *
      * @var string
      */
-    protected $table = 'categories';
+    protected $table = 'collaborators';
     
     /**
      * fillable
@@ -25,7 +23,9 @@ class Category extends Model
      */
     protected $fillable =[
         'name',
-        'description',
+        'lastname',
+        'phone',
+        'email',
         'image'
     ];
 
@@ -34,7 +34,7 @@ class Category extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    /*public function service(): BelongsTo
+   /* public function service(): BelongsTo
     {
         return $this->belongsTo(Service::class);
     }*/
