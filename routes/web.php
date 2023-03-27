@@ -34,7 +34,7 @@ Route::get('/delete-category/{id}', [CategoryController::class, 'deleteCategory'
 
 Route::get('/add-collaborator', [CollaboratorController::class, 'addCollaborator']);
 
-Route::post('/add-category',[CollaboratorController::class, 'storeCollaborator'])->name('collaborator.store');
+Route::post('/add-collaborator',[CollaboratorController::class, 'storeCollaborator'])->name('collaborator.store');
 
 Route::get('/all-collaborators', [CollaboratorController::class, 'collaborators']);
 
