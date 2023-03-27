@@ -15,7 +15,7 @@ class Collaborator extends Model
      * @var string
      */
     protected $table = 'collaborators';
-    
+    protected $primaryKey = 'collab_id';
     /**
      * fillable
      *
@@ -34,9 +34,9 @@ class Collaborator extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-   /* public function service(): BelongsTo
+    public function service(): BelongsTo
     {
         return $this->belongsTo(Service::class);
-    }*/
+    }
 
 }

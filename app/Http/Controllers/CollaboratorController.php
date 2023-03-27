@@ -43,9 +43,9 @@ class CollaboratorController extends Controller
     }
 
     //Edit function para recoger categoria a editar
-    public function editCollaborator($id)
+    public function editCollaborator($collab_id)
     {
-        $collaborator = Collaborator::find($id);
+        $collaborator = Collaborator::find($collab_id);
         return view('edit-collaborator',compact('collaborator'));
     }
 
@@ -61,7 +61,7 @@ class CollaboratorController extends Controller
         $imageName = time().'.'.$image->extension();//error en esta linea- para que funcione tiene que subir otra imagen para funcionar o poner la misma
         $image->move(public_path('images'),$imageName);
 
-        $collaborator = Collaborator::find($request->id);
+        $collaborator = Collaborator::find($request->collab_id);
         $collaborator->name=$name;
         $collaborator->lastname=$lastname;
         $collaborator->phone=$phone;
@@ -72,9 +72,9 @@ class CollaboratorController extends Controller
     }
 
     //Funcion que elimina registro (categoria)
-    public function deleteCollaborator($id)
+    public function deleteCollaborator($collab_id)
     {
-        $collaborator = Collaborator::find($id);
+        $collaborator = Collaborator::find($collab_id);
         unlink(public_path('images').'/'.$collaborator->image);
         $collaborator->delete();
         return back()->with('collaborator_deleted','Collaborator deleted successfully!');

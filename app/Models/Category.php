@@ -17,7 +17,7 @@ class Category extends Model
      * @var string
      */
     protected $table = 'categories';
-    
+    protected $primaryKey = 'category_id';
     /**
      * fillable
      *
@@ -34,9 +34,9 @@ class Category extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    /*public function service(): BelongsTo
+    public function service(): BelongsTo
     {
         return $this->belongsTo(Service::class);
-    }*/
+    }
 
 }

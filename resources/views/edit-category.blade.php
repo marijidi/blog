@@ -25,7 +25,7 @@
                         @endif
                         <form method="POST" action="{{route('category.update')}}" enctype="multipart/form-data">
                             @csrf
-                            <input type="hidden" name="id" value="{{$category->id}}"/>
+                            <input type="hidden" name="category_id" value="{{$category->category_id}}"/>
                             <div class="form-group">
                                 <label for="name">Name</label>
                                 <input type="text" name="name" value="{{$category->name}}"class="form-control"/>

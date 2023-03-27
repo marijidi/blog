@@ -40,9 +40,9 @@ class CategoryController extends Controller
     }
 
     //Edit function para recoger categoria a editar
-    public function editCategory($id)
+    public function editCategory($category_id)
     {
-        $category = Category::find($id);
+        $category = Category::find($category_id);
         return view('edit-category',compact('category'));
     }
 
@@ -56,7 +56,7 @@ class CategoryController extends Controller
         $imageName = time().'.'.$image->extension();//error en esta linea- para que funcione tiene que subir otra imagen para funcionar o poner la misma
         $image->move(public_path('images'),$imageName);
 
-        $category = Category::find($request->id);
+        $category = Category::find($request->category_id);
         $category->name=$name;
         $category->description=$description;
         $category->image= $imageName;
@@ -66,9 +66,9 @@ class CategoryController extends Controller
     }
 
     //Funcion que elimina registro (categoria)
-    public function deleteCategory($id)
+    public function deleteCategory($category_id)
     {
-        $category = Category::find($id);
+        $category = Category::find($category_id);
         unlink(public_path('images').'/'.$category->image);
         $category->delete();
         return back()->with('category_deleted','Category deleted successfully!');

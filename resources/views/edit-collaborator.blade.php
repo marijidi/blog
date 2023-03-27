@@ -25,7 +25,7 @@
                         @endif
                         <form method="POST" action="{{route('collaborator.update')}}" enctype="multipart/form-data">
                             @csrf
-                            <input type="hidden" name="id" value="{{$collaborator->id}}"/>
+                            <input type="hidden" name="collab_id" value="{{$collaborator->collab_id}}"/>
                             <div class="form-group">
                                 <label for="name">Name</label>
                                 <input type="text" name="name" value="{{$collaborator->name}}" class="form-control"/>

@@ -38,8 +38,8 @@
                                 <td>{{$category->description}}</td>
                                 <td><img src="{{asset('images')}}/{{$category->image}}" alt="" style="max-width:60px;"/></td>
                                 <td>
-                                    <a href="/edit-category/{{$category->id}}" class="btn btn-info">Edit</a>
-                                    <a href="/delete-category/{{$category->id}}" class="btn btn-danger">Delete</a>
+                                    <a href="/edit-category/{{$category->category_id}}" class="btn btn-info">Edit</a>
+                                    <a href="/delete-category/{{$category->category_id}}" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
                             @endforeach

@@ -42,8 +42,8 @@
                                 <td>{{$collaborator->email}}</td>
                                 <td><img src="{{asset('images')}}/{{$collaborator->image}}" alt="" style="max-width:60px;"/></td>
                                 <td>
-                                    <a href="/edit-collaborator/{{$collaborator->id}}" class="btn btn-info">Edit</a>
-                                    <a href="/delete-collaborator/{{$collaborator->id}}" class="btn btn-danger">Delete</a>
+                                    <a href="/edit-collaborator/{{$collaborator->collab_id}}" class="btn btn-info">Edit</a>
+                                    <a href="/delete-collaborator/{{$collaborator->collab_id}}" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
                             @endforeach
