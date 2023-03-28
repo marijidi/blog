@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;
+use App\Models\Collaborator;
+use App\Models\Service;
 
 
 class ServiceController extends Controller
@@ -18,8 +21,13 @@ class ServiceController extends Controller
 
     public function index()
     {
-        $service = Service::with('category','collaborator')->get();
-        return view('service',compact('service'));
+        $services = Service::with('category')->get();
+        return view('service',compact('services'));
+
+
     }
+
+      
+
 }
 
