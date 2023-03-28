@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Service;
 use Illuminate\Database\Relations\BelongsTo;
 use Illuminate\Database\Relations\HasOne;
 

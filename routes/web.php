@@ -46,3 +46,8 @@ Route::get('/edit-collaborator/{collab_id}', [CollaboratorController::class, 'ed
 Route::post('/edit-collaborator',[CollaboratorController::class, 'updateCollaborator'])->name('collaborator.update');
 
 Route::get('/delete-collaborator/{collab_id}', [CollaboratorController::class, 'deleteCollaborator']);
+
+
+//Service trial
+
+Route::get('/service', [ServiceController::class, 'index']);

@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Category;
+use App\Models\Service;
 
 class Service extends Model
 {
@@ -15,6 +17,7 @@ class Service extends Model
      * @var string
      */
     protected $table = 'services';
+    protected $primaryKey = 'service_id';
     
     /**
      * fillable
@@ -33,7 +36,12 @@ class Service extends Model
      */
     public function category(): HasOne
     {
-        return $this->hasOne(Category::class, 'category_id', 'id');
+        return $this->hasOne(Category::class, 'category_id', 'category_id');
+    }
+
+    public function collaborator(): HasMany
+    {
+        return $this->hasOne(collaborators::class, 'collab_id', 'collab_id');
     }
     
 }
