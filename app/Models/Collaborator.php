@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 use App\Models\Service;
 
@@ -21,6 +22,7 @@ class Collaborator extends Model
      */
     protected $table = 'collaborators';
     protected $primaryKey = 'collab_id';
+    protected $guarded = [];
     /**
      * fillable
      *
@@ -31,7 +33,8 @@ class Collaborator extends Model
         'lastname',
         'phone',
         'email',
-        'image'
+        'image',
+        'service_id'
     ];
 
     /**
@@ -39,9 +42,10 @@ class Collaborator extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function service(): BelongsTo
-    {
-        return $this->belongsTo(Service::class);
-    }
+
+     public function service(): HasMany
+     {
+         return $this->hasMany(Service::class, 'service_id', 'service_id');
+     }
 
 }

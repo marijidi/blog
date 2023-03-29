@@ -5,12 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Collaborator;
 use App\Http\Controllers\Controller;
+use App\Models\Service;
 
 class CollaboratorController extends Controller
 {
     public function addCollaborator(Request $request)
     {
         return view ('add-collaborator');
+    }
+
+    //probando read
+    public function serviceShowid()
+    {
+        $collaborators = Collaborator::with('service')->get();
+        return view('add-collaborator',compact('collaborators'));
     }
     
     //Funcion que guarda una category
@@ -23,6 +31,7 @@ class CollaboratorController extends Controller
         $image=$request->file('file');
         $imageName = time().'.'.$image->extension();
         $image->move(public_path('images'),$imageName);
+        $service_id = $request->service_id;
 
         $collaborator = new Collaborator();
         $collaborator->name=$name;
@@ -30,7 +39,9 @@ class CollaboratorController extends Controller
         $collaborator->phone=$phone;
         $collaborator->email=$email;
         $collaborator->image=$imageName;
+        $collaborator->service_id->$service_id;
         $collaborator->save();
+        
 
         return back()->with('collaborator_added','collaborator record has been inserted');//Message Alert
     }

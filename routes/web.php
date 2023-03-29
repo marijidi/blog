@@ -89,6 +89,8 @@ Route::get('/add-collaborator', [CollaboratorController::class, 'addCollaborator
 
 Route::post('/add-collaborator',[CollaboratorController::class, 'storeCollaborator'])->name('collaborator.store');
 
+Route::get('/add-collaborator',[CollaboratorController::class, 'serviceShowid'])->name('collaborator.store');
+
 Route::get('/all-collaborators', [CollaboratorController::class, 'collaborators']);
 
 Route::get('/edit-collaborator/{collab_id}', [CollaboratorController::class, 'editCollaborator']);

@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id('collab_id');
             $table->string('name');
             $table->string('lastname');
-           $table->string('phone');
-           $table->string('email')->unique();
-           $table->string('image');
+            $table->string('phone');
+            $table->string('email')->unique();
+            $table->string('image');
+            $table->foreignId('service_id')->references('service_id')->on('services');
             $table->timestamps();
         });
     }
