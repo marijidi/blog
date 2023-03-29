@@ -12,7 +12,7 @@ class LoginController extends Controller
 
     public function show(){
     if(Auth::check()){
-        return redirect('/home'); // linea que si esta autenticado se vaya a la vista home practicamente al index
+        return redirect('/'); // linea que si esta autenticado se vaya a la vista home practicamente al index
     }
 
 
@@ -33,7 +33,7 @@ class LoginController extends Controller
    }
 
 public function authenticated(Request $request, $user){
-    return redirect('/index');
+    return redirect('/');
 }
 
 } 

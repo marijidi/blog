@@ -5,16 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!--bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <!--iconos-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
-    />
-     <!--estilo css.-->
-    <link rel="stylesheet" href="css/estilo.css" />
+  <!--bootstrap-->
+  @include('layouts.partials.linksBoost')
+  
     
 </head>
 <body>
@@ -179,48 +172,8 @@
       </div>
    </div>
   </section>
-  <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary">
-    <div class="container py-4 py-md-5 px-4 px-md-3 text-body-secondary">
-      <div class="row">
-        <div class="col-lg-3 mb-3">
-          <a class="d-inline-flex  mb-2 text-body-secondary text-decoration-none" href="/" aria-label="Bootstrap">
-           <img src="img/LOGO.png" alt="Logo" width="100" height="90" >
-           <span class="fs-5">MULTITRABAJOS HN</span>
-          </a>
-          <ul class="list-unstyled small">
-           <li class="mb-2">Designed and built with all the love in the world by the .</li> 
-        </ul>
-      </div>
-      <div class="col-6 col-lg-2 offset-lg-1 mb-3">
-        <h5>Categorías</h5>
-        <ul class="list-unstyled">
-          <li class="mb-2"><a href="/">HOGAR</a></li>
-          <li class="mb-2"><a href="">BELLEZA</a></li>
-          <li class="mb-2"><a href="">TECNICOS</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-lg-2 mb-3">
-        <h5>SERVICIOS</h5>
-        <ul class="list-unstyled">
-          <li class="mb-2"><a href="">Servicios/ Presione aquí</a></li>
-          
-        </ul>
-      </div>
-      <div class="col-6 col-lg-2 mb-3">
-        <h5>COMENTARIOA</h5>
-        <ul class="list-unstyled">
-          <li class="mb-2"><a href="">Comentarios / Clientes</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-lg-2 mb-3">
-        <h5>CONTACTOS</h5>
-        <ul class="list-unstyled">
-          <li class="mb-2"><a href="">Ayuda</a></li> 
-        </ul>
-      </div>
-    </div>
-  </footer>
+  @include('layouts.partials.footer')
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
 </body>
 </html>
