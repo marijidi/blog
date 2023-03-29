@@ -1,0 +1,59 @@
+.posimagenes {
+    padding-top: none;
+  }
+  
+  .centro {
+    text-align: center;
+  }
+  .titulo {
+    font-size: 48px;
+  }
+  .card img {
+    height: 200px;
+  }
+  .card a {
+    color: rgb(10, 14, 13);
+    background-color: #a5c5e4; /*color del boton*/
+  }
+  .card a:hover {
+    background-color: #5eb0d9; /*color del boton al selecionar*/
+  }
+  .card-body {
+    background-color: #e1eff5;
+  }
+  .img-border {
+    border-radius: 150px 150px;
+  }
+  .iconos ul {
+    list-style-type: none;
+  }
+  
+  /*Osman CSS si lo uso*/
+  .titulo
+{
+    font-size: 48px;;
+}
+.card img
+{
+    height: 200px;
+}
+.card a
+{
+    color: black;
+    background-color:   #bac8d5;
+}
+.card a:hover
+{
+    background-color:   #32506b;
+}
+.card-body
+{
+    background-color:  #0d3c62;
+}
+.img-border
+{
+    border-radius: 150px 150px;
+}
+.iconos ul{
+    list-style-type: none;
+}
