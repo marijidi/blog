@@ -13,6 +13,11 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LogoutController;
 
 
+
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,8 +33,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-//ALICE
-
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/service', function () {
@@ -41,11 +44,11 @@ Route::get('/acercade', function () {
 });
 
 
-Route::get('/category', [categoryController::class, 'show']);
+Route::get('/category', [CategoryController::class, 'show']);
 
-Route::get('/services/{category_id}', [categoryController::class,'servicesByCategory']);
+Route::get('/services/{category_id}', [CategoryController::class,'servicesByCategory']);
 
-Route::get('/category/{category_id}', [categoryController::class, 'showService'])->name('show.service');
+Route::get('/category/{category_id}', [CategoryController::class, 'showService'])->name('show.service');
 
 
 //login-register
@@ -103,3 +106,6 @@ Route::get('/delete-collaborator/{collab_id}', [CollaboratorController::class, '
 //Service trial
 
 Route::get('/service', [ServiceController::class, 'index']);
+
+
+

@@ -13,6 +13,6 @@ class LogoutController extends Controller
      Session::flush(); //actualiza y lebra el flujo de las seciones 
      Auth::logout();
 
-     return redirect()->to('/login');//retorne a otra ruta
+     return redirect()->to('/');//retorne a otra ruta
     }
 }

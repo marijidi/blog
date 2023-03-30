@@ -5,7 +5,11 @@
     <!---->
     <form action="/login" method="POST">
     @csrf
-    <h1>Login</h1>
+    <a class="navbar-brand" style="font-size: 28px;" href="/">
+        <img src="img/LOGO.png"  alt="Logo" width="100" height="90" >
+        MULTITRABAJOS HN
+      </a>
+    <h2>Login</h2>
     @include('layouts.partials.messages')
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Username / Email address</label>
