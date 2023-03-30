@@ -13,8 +13,7 @@
            <div class="row">
               <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
-                        All Categories <a href="/add-category" class="btn btn-success">Add New</a>
+                    <div class="card-header">All Categories <a href="/add-category" class="btn btn-success">Add New</a>   
                     </div>
                     <div class="card-body">
                     @if(Session::has('category_deleted'))
@@ -45,7 +44,9 @@
                             @endforeach
                         </tbody>
                        </table>
-                        
+                       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                       <a class="btn btn-danger" href="{{ url('admin/') }}">Salir</a>
+                       </div>
                     </div>
                 </div>
               </div>

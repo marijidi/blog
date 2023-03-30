@@ -16,6 +16,7 @@
                     <div class="card-header">
                         Add New Category
                     </div>
+                    
                     <div class="card-body">
                         <!--Message Alert-->
                         @if(Session::has('category_added'))
@@ -23,6 +24,17 @@
                              {{Session::get('category_added')}}
                         </div>
                         @endif
+
+                        @if(count($errors)>0)
+                        <div class="alert alert-primary" role="alert">
+                            <ul>    
+                                @foreach( $errors->all() as $error)
+                                <li> {{ $error }} </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
+
                         <form method="POST" action="{{route('category.store')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
@@ -39,8 +51,13 @@
                                 <input type="file" name="file" class="form-control" onchange="previewFile(this)"/>
                                 <img id="previewImg" src="" alt="preview image" style="max-width:130px;margin-top:20px;"/>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <a class="btn btn-warning" href="{{ url('all-categories/') }}">Regresar</a>
+                            </div>
                         </form>
+
+
                     </div>
                 </div>
               </div>

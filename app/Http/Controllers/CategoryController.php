@@ -24,6 +24,17 @@ class CategoryController extends Controller
     //Funcion que guarda una category
     public function storeCategory(Request $request)
     {
+        $campos=[
+            'name'=>'required',
+            'description'=>'required',
+
+        ];
+        $mensaje=[
+            'required'=>':attribute es requerido',
+        ];
+
+        
+        $this->validate($request, $campos, $mensaje);
         $name = $request->name;
         $description = $request->description;
         $image=$request->file('file');
@@ -35,8 +46,9 @@ class CategoryController extends Controller
         $category->description=$description;
         $category->image=$imageName;
         $category->save();
-
-        return back()->with('category_added','Category record has been inserted');//Message Alert
+        
+       // return back()->with('category_added','Category record has been inserted');//Message Alert
+       return redirect('all-categories')->with('mensaje','Empleado agregado con exito');
     }
 
     //Display Datos de Tabla categories
@@ -59,7 +71,6 @@ class CategoryController extends Controller
         $name = $request->name;
         $description = $request->description;
         $image=$request->file('file');
-        //ojo aqui
         $imageName = time().'.'.$image->extension();//error en esta linea- para que funcione tiene que subir otra imagen para funcionar o poner la misma
         $image->move(public_path('images'),$imageName);
 
